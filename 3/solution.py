@@ -8,15 +8,8 @@ with open(INPUT, "r") as file:
     for line in file:
         arr.append(line.rstrip())
 
-print(f"Arr width: {len(arr[1])}\nArr height: {len(arr)}")
-
 symbols = "-+*&/@%=$#"
-for line in arr:
-    print(line.rstrip())
-
-
 total = 0
-numbers = []
 for x in range(len(arr)):
     line = arr[x]
     i = 0
@@ -44,6 +37,7 @@ for x in range(len(arr)):
                     break
             i = j
         i += 1
-
-print(numbers)
 print(total)
+
+# Part 2
+
