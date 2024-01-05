@@ -10,8 +10,8 @@ with open(INPUT, "r") as file:
 
 symbols = "-+*&/@%=$#"
 total = 0
-for x in range(len(arr)):
-    line = arr[x]
+for y in range(len(arr)):
+    line = arr[y]
     i = 0
     while i < len(line):
         if line[i].isdigit():
@@ -21,7 +21,7 @@ for x in range(len(arr)):
 
             line[i:j]
 
-            v_range = range(max(0, x-1), min(len(arr), x+2))
+            v_range = range(max(0, y-1), min(len(arr), y+2))
             h_range = range(max(0, i-1), min(len(line), j+1))
 
             isPartNumber = False
@@ -39,4 +39,4 @@ for x in range(len(arr)):
 print(total)
 
 # Part 2
-
+# 
