@@ -29,7 +29,6 @@ for x in range(len(arr)):
                 for col_j in h_range:
                     char = arr[row_j][col_j]
                     if char in symbols:
-                        numbers.append(int(line[i:j]))
                         total += int(line[i:j])
                         isPartNumber = True
                         break
