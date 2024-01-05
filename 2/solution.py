@@ -1,5 +1,7 @@
 import re
 
+INPUT = "input.txt"
+
 # Part 1
 def game_is_possible(line = ""):
     max_red = 12
@@ -22,7 +24,6 @@ def game_is_possible(line = ""):
                 return 0
     return game_id
 
-INPUT = "input.txt"
 total = 0
 with open(INPUT, "r") as file:
     for line in file:
@@ -55,7 +56,6 @@ def power_of_game(line):
                 min_colors[color] = number
     return min_colors["red"] * min_colors["green"] * min_colors["blue"]
 
-INPUT = "input.txt"
 total = 0
 with open(INPUT, "r") as file:
     for line in file:
