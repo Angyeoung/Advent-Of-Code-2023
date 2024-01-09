@@ -28,7 +28,7 @@ total = 0
 with open(INPUT, "r") as file:
     for line in file:
         total += game_is_possible(line)
-print(total)
+print(f"Part 1: {total}")
 
 
 # Part 2 
@@ -60,5 +60,5 @@ total = 0
 with open(INPUT, "r") as file:
     for line in file:
         total += power_of_game(line)
-print(total)
+print(f"Part 2: {total}")
 

@@ -10,7 +10,7 @@ with open(INPUT, "r") as file:
                 if first is None:
                     first = char
         total += int(first + last)
-print(total)
+print(f"Part 1: {total}")
 
 
 # Part Two
@@ -45,4 +45,4 @@ with open(INPUT, "r") as file:
                 lastDigit = string
                 lastIndex = rindex
         total += int(digits[firstDigit] + digits[lastDigit])
-print(total)
+print(f"Part 2: {total}")

@@ -36,7 +36,7 @@ for y in range(len(arr)):
                     break
             i = j
         i += 1
-print(total)
+print(f"Part 1: {total}")
 
 # Part 2
 # 
