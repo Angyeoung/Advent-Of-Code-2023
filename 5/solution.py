@@ -12,3 +12,5 @@ with open("input.txt") as file:
             seeds[i] += dest - source
             check[i] = True
     print(min(seeds))
+
+# Part 2
