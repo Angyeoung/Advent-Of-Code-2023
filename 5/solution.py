@@ -14,3 +14,5 @@ with open("input.txt") as file:
     print(min(seeds))
 
 # Part 2
+# Calculate ranges as parts instead of seeds individually,
+# This may require splitting a range into parts
