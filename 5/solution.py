@@ -11,7 +11,7 @@ with open("input.txt") as file:
             if not source <= seed < source + length: continue
             seeds[i] += dest - source
             check[i] = True
-    print(min(seeds))
+    print(f"Part 1: {min(seeds)}")
 
 # Part 2
 # Calculate ranges as parts instead of seeds individually,

@@ -1,15 +1,7 @@
 import math
 
-# Part 1
-with open("input.txt") as file:
-    # in ms
-    times = file.readline()[10:].split()
-    # in mm
-    distances = file.readline()[10:].split()
-
-print(times, distances)
-
-for time, distance in zip(times, distances):
+# Used in both solutions
+def waysToWin(time, distance):
     '''
     Using the following:
         d - distance travelled
@@ -32,20 +24,29 @@ for time, distance in zip(times, distances):
         If ceil(min) > floor(max), there is no way to win
         If ceil(min) == floor(max), there is one way to win
         if ceil(min) < floor(max), there are floor(max) - ceil(min) + 1 ways to win
-    So:
-        Find the x-intercept points
-        If peak distance < 0
     '''
+    j, r = int(distance) + 1, int(time)
+    vX = r / 2
+    vY = -pow(vX, 2) + r * vX - j
+    if vY < 0: return 0
+    lx = math.ceil(( math.sqrt(pow(r, 2) - 4 * j) - r)/(-2))
+    rx = math.floor((-math.sqrt(pow(r, 2) - 4 * j) - r)/(-2))
+    if lx > rx: return 0
+    if lx < rx: return rx - lx + 1
 
-    # hold time
-    h = 1
-    # distance required to beat record
-    j = distance + 1
-    r = time
-    # get the distance based on hold time
-    d = -(h^2) + r * h - j
-    # left x-intersect
-    lx = ( math.sqrt(pow(r, 2) - 4 * j) - r)/(-2)
-    rx = (-math.sqrt(pow(r, 2) - 4 * j) - r)/(-2)
+# Part 1
+with open("input.txt") as file:
+    times = file.readline()[10:].split()
+    distances = file.readline()[10:].split()
+result = 1
+for time, distance in zip(times, distances):
+    num = waysToWin(time, distance)
+    result *= num if num > 0 else 1
+print(f"Part 1: {result}")
 
-    print(time, distance)
+# Part 2
+with open("input.txt") as file:
+    time = "".join(file.readline()[10:].split())
+    distance = "".join(file.readline()[10:].split())
+result = waysToWin(time, distance)
+print(f"Part 2: {result}")
